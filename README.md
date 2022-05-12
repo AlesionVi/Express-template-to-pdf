@@ -1,42 +1,3 @@
-# Express-template-to-pdf
-This is the same repo as https://github.com/ministryofjustice/express-template-to-pdf however I have added in an orientation check as well. I take no credit for the original package as I have merely just extended it.
-
-
-Below are the same notes from https://github.com/ministryofjustice/express-template-to-pdf for usage with my extension:
-
-Skip to content
-Product 
-Team
-Enterprise
-Explore 
-Marketplace
-Pricing 
-Search
-Sign in
-Sign up
-This repository has been archived by the owner. It is now read-only.
-ministryofjustice
-/
-express-template-to-pdf
-Public archive
-Code
-Issues
-4
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-express-template-to-pdf/README.md
-@atodd-noms
-atodd-noms Clarify README
-Latest commit a8e3d73 on Jul 3, 2019
- History
- 2 contributors
-@atodd-noms@romidane
-209 lines (156 sloc)  7.9 KB
-   
 # express-template-to-pdf
 
 [![NPM Version][npm-image]][npm-url]
@@ -58,8 +19,10 @@ npm install @ministryofjustice/express-template-to-pdf --save
 Specify the location of your views directory
 ```javascript
 const pdfRenderer = require('@ministryofjustice/express-template-to-pdf')
+
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
+
 app.use(pdfRenderer())
 ```
 
@@ -119,6 +82,7 @@ const options = {
     },
   },
 }
+
 app.use('/pdf', (req, res) => {
     res.renderPDF('helloWorld', { message: 'Hello World!' }, options);
 })
@@ -159,8 +123,11 @@ doctype html
 html(lang="en")
   head
     link(href= "http://domain/path/styles.css", media="print", rel="stylesheet", type="text/css")
+
   body
+
     block content
+
       div
         h1.myStyle
             A styled Heading
@@ -218,34 +185,8 @@ const options = {
   },
 }
 ```
-## Orientation
-Add the below into your pdfOptions to change the orientation of the pdf to landscape. Don't add it if you want to keep it portrait.
 
-```javascript
-landscape: true,
-```
 
-## Example of Orientation
-
-```javascript
-const headerFooterStyle =
-  'font-family: Arial; font-size: 10px; font-weight: bold; width: 100%; height: 20px; text-align: center;'
-  
-const options = {
-  filename: 'helloWorld.pdf',
-  pdfOptions: {
-    landscape: true,
-    displayHeaderFooter: true,     
-    format: 'A4',
-    margin: {
-      top: '40px',
-      bottom: '60px',
-      left: '40px',
-      right: '20px',
-    },
-  },
-}
-```
 ## Example
 run `node examples/pug/index.js` or ``node examples/nunjucks/index.js`` then browse to http://localhost:3001/pdf
 
@@ -266,15 +207,3 @@ _Authors: Alistair Todd, Steven Bapaga_
 [issues-image]: https://img.shields.io/github/issues/ministryofjustice/express-template-to-pdf.svg
 [issues-url]: https://github.com/ministryofjustice/express-template-to-pdf/issues
 [download-image]: https://img.shields.io/npm/dm/@ministryofjustice/express-template-to-pdf.svg
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
