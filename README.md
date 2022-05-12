@@ -12,7 +12,7 @@ Serve PDF documents in express generated from templates
 
 ## Installation
 ```bash
-npm install @ministryofjustice/express-template-to-pdf --save
+npm install @AlesionVi/Express-template-to-pdf --save
 ```
 
 ## Usage
