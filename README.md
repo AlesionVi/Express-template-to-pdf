@@ -18,7 +18,7 @@ npm i express-template-to-pdf
 ## Usage
 Specify the location of your views directory
 ```javascript
-const pdfRenderer = require('@AlesionVi/Express-template-to-pdf')
+const pdfRenderer = require('express-template-to-pdf')
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
