@@ -235,9 +235,7 @@ const options = {
   filename: 'helloWorld.pdf',
   pdfOptions: {
     landscape: true,
-    displayHeaderFooter: true,
-    headerTemplate: `<span style="${headerFooterStyle}">Repeating header on every page</span>`,
-    footerTemplate: `<span style="${headerFooterStyle}">Repeating footer on page <span class="pageNumber"></span> of <span class="totalPages"></span></span>`,      
+    displayHeaderFooter: true,     
     format: 'A4',
     margin: {
       top: '40px',
