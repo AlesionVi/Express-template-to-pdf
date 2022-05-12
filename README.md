@@ -18,7 +18,7 @@ npm install @ministryofjustice/express-template-to-pdf --save
 ## Usage
 Specify the location of your views directory
 ```javascript
-const pdfRenderer = require('@ministryofjustice/express-template-to-pdf')
+const pdfRenderer = require('@AlesionVi/Express-template-to-pdf')
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
