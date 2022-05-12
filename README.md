@@ -218,8 +218,36 @@ const options = {
   },
 }
 ```
+## Orientation
+Add the below into your pdfOptions to change the orientation of the pdf to landscape. Don't add it if you want to keep it portrait.
 
+```javascript
+landscape: true,
+```
 
+## Example of Orientation
+
+```javascript
+const headerFooterStyle =
+  'font-family: Arial; font-size: 10px; font-weight: bold; width: 100%; height: 20px; text-align: center;'
+  
+const options = {
+  filename: 'helloWorld.pdf',
+  pdfOptions: {
+    landscape: true,
+    displayHeaderFooter: true,
+    headerTemplate: `<span style="${headerFooterStyle}">Repeating header on every page</span>`,
+    footerTemplate: `<span style="${headerFooterStyle}">Repeating footer on page <span class="pageNumber"></span> of <span class="totalPages"></span></span>`,      
+    format: 'A4',
+    margin: {
+      top: '40px',
+      bottom: '60px',
+      left: '40px',
+      right: '20px',
+    },
+  },
+}
+```
 ## Example
 run `node examples/pug/index.js` or ``node examples/nunjucks/index.js`` then browse to http://localhost:3001/pdf
 
